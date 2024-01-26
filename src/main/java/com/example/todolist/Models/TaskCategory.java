@@ -7,12 +7,12 @@ import jakarta.persistence.*;
 public class TaskCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long category_id;
+    Long categoryId;
 
     @Column(nullable = false, length = 50)
-    private String category_name;
+    String categoryName;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User users;
+    @JoinColumn(name = "taskId")
+    Task tasks;
 }

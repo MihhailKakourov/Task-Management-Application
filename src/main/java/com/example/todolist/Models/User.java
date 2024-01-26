@@ -7,21 +7,18 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_id;
+    Long userId;
 
     @Column(nullable = false, length = 100)
-    private String username;
+    String username;
 
     @Column(nullable = false, length = 100)
-    private String password;
+    String password;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role roles;
+    @JoinColumn(name = "roleId")
+    Role roles;
 
     @OneToMany(mappedBy = "users")
-    private List<Task> tasks;
-
-    @OneToMany(mappedBy = "users")
-    private List<TaskCategory> categories;
+    List<Task> tasks;
 }
