@@ -10,7 +10,9 @@ A simple web application for managing tasks (to-do list) using Java, Spring Boot
   - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Acknowledgments](#acknowledgments)
+- [Functional requirements](#Functional-requirements)
+- [Participants](#Participants)
+- [ERD](#ERD)
 
 ## Introduction
 
@@ -92,3 +94,5 @@ Make sure you have the following installed:
    - @MihhailKakourov - Mihhail Kakourov
 
    - @IvanAntipov777 - Ivan Antipov
+## ERD
+![ERD](https://github.com/MihhailKakourov/Task-Management-Application/blob/master/DiagDB.png)
