@@ -20,8 +20,8 @@ public class Task {
 
     Date deadline;
 
-    @Column(nullable = false, length = 50)
-    String status;
+    @Column(nullable = false)
+    Boolean status;
 
     @ManyToOne
     @JoinColumn(name = "userId")

@@ -12,7 +12,7 @@ public class User {
     @Column(nullable = false, length = 100)
     String username;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 200)
     String password;
 
     @ManyToOne
