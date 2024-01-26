@@ -27,6 +27,9 @@ public class Task {
     @JoinColumn(name = "userId")
     User users;
 
-    @OneToMany(mappedBy = "tasks")
+    @ManyToMany
+    @JoinTable(name = "taskAndCategory",
+               joinColumns = @JoinColumn(name = "taskId"),
+               inverseJoinColumns = @JoinColumn(name = "categoryId"))
     List<TaskCategory> categories;
 }

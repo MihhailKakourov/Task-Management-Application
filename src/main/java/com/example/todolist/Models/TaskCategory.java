@@ -1,6 +1,7 @@
 package com.example.todolist.Models;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "task_categories")
@@ -12,7 +13,6 @@ public class TaskCategory {
     @Column(nullable = false, length = 50)
     String categoryName;
 
-    @ManyToOne
-    @JoinColumn(name = "taskId")
-    Task tasks;
+    @ManyToMany(mappedBy = "categories")
+    List<Task> tasks;
 }
