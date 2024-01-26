@@ -10,6 +10,7 @@ A simple web application for managing tasks (to-do list) using Java, Spring Boot
   - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
+- [Functional requirements](#Functional-requirements)
 - [Participants](#Participants)
 - [ERD](#ERD)
 
