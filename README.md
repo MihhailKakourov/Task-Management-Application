@@ -92,3 +92,5 @@ Make sure you have the following installed:
    - @MihhailKakourov - Mihhail Kakourov
 
    - @IvanAntipov777 - Ivan Antipov
+## ERD
+![ERD](https://github.com/MihhailKakourov/Task-Management-Application/DiagDB.png)
