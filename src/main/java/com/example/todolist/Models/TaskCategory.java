@@ -1,18 +1,18 @@
 package com.example.todolist.Models;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "task_categories")
 public class TaskCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long category_id;
+    Long categoryId;
 
     @Column(nullable = false, length = 50)
-    private String category_name;
+    String categoryName;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User users;
+    @ManyToMany(mappedBy = "categories")
+    List<Task> tasks;
 }

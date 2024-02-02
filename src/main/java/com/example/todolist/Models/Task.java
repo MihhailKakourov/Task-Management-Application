@@ -10,20 +10,26 @@ import java.util.List;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long task_id;
+    Long taskId;
 
     @Column(nullable = false, length = 50)
-    private String task_title;
+    String taskTitle;
 
     @Column(length = 1000)
-    private String task_description;
+    String taskDescription;
 
-    private Date deadline;
+    Date deadline;
 
-    @Column(nullable = false, length = 50)
-    private String status;
+    @Column(nullable = false)
+    Boolean status;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User users;
+    @JoinColumn(name = "userId")
+    User users;
+
+    @ManyToMany
+    @JoinTable(name = "taskAndCategory",
+               joinColumns = @JoinColumn(name = "taskId"),
+               inverseJoinColumns = @JoinColumn(name = "categoryId"))
+    List<TaskCategory> categories;
 }
