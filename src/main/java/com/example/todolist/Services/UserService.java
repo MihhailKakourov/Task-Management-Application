@@ -25,14 +25,6 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public List<User> getUserByRole(Role role) {
-        return userRepository.findUserByRole(role);
-    }
-
-    public List<User> getUserByTask(Task task) {
-        return userRepository.findUserByTask(task);
-    }
-
     public List<User> searchUserByKeyword(String keyword){
         return userRepository.searchByKeyword(keyword);
     }

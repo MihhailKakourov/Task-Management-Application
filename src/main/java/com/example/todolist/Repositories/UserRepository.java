@@ -15,11 +15,8 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long>{
 
     List<User> findAll();
-
     User save(User user);
     Optional<User> findById(Long userId);
-    List<User> findUserByTask(Task task);
-    List<User> findUserByRole(Role role);
     void deleteUserByName(String username);
     @Query("SELECT u FROM User u WHERE u.username LIKE %:keyword%")
     List<User> searchByKeyword(@Param("keyword") String keyword);

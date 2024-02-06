@@ -16,64 +16,46 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class UserController {
     private final UserService userService;
+
     @Autowired
-    public UserController(UserService UserService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping
-    public String getAllUsers(Model model){
+    public String getAllUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         return "users/list";
     }
 
     @GetMapping("/{id}")
-    public String getTaskById(@PathVariable Long id, Model model){
+    public String getUserById(@PathVariable Long id, Model model) {
         User user = userService.getUserById(id);
         model.addAttribute("user", user);
         return "user/details";
     }
 
-//    @GetMapping("/create")
-//    public String showCreateForm(Model model){
-//        model.addAttribute("task", new Task());
-//        return "task/create";
-//    }
+    @GetMapping
+    public String searchUserByKeyword(Model model, String keyword) {
+        model.addAttribute("tasks", userService.searchUserByKeyword(keyword));
+        return "users";
+    }
 
-//    @GetMapping
-//    public String getUserByTask(Model model, @AuthenticationPrincipal User user) {
-//        model.addAttribute("tasks", taskService.getTaskByUser(user));
-//        return "tasks";
-//    }
-//
-//    @GetMapping
-//    public String getTaskByTaskCategory(Model model, @ModelAttribute("categoryName") String categoryName) {
-//        model.addAttribute("tasks", taskService.getTaskByTaskCategory(categoryName));
-//        return "tasks :: task";
-//    }
-//
-//    @GetMapping
-//    public String searchTaskByKeyword(Model model, String keyword) {
-//        model.addAttribute("tasks", taskService.searchTaskByKeyword(keyword));
-//        return "tasks";
-//    }
-//
-//    @PostMapping("/create")
-//    public String createTask(@ModelAttribute Task task){
-//        taskService.createTask(task);
-//        return "redirect:/tasks";
-//    }
-//
-//
-//    @GetMapping("/{id}/delete")
-//    public String deleteTaskById(@PathVariable Long task_id){
-//        taskService.deleteTaskById(task_id);
-//        return "redirect:/tasks";
-//    }
-//
-//    @GetMapping("/delete")
-//    public String deleteTaskByUser(@AuthenticationPrincipal User user) {
-//        taskService.deleteTaskByUser(user);
-//        return "redirect:/tasks";
-//    }
+    @PostMapping("/create")
+    public String createUser(@ModelAttribute User user) {
+        userService.createUser(user);
+        return "redirect:/";
+    }
+
+    @GetMapping("/{id}/delete")
+    public String deleteUserById(@PathVariable Long user_id) {
+        userService.deleteUserById(user_id);
+        return "redirect:/";
+    }
+
+    @GetMapping("/delete")
+    public String deleteUserByName(@AuthenticationPrincipal User user) {
+        userService.deleteUserByName(user.toString());
+        return "redirect:/";
+    }
 }
