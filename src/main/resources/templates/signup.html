@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{css/style.css}"/>
 </head>
 <body class="signup-page">
 
     <div class="login-container">
         <div class="button-back">
-            <a href="index.html">Back</a>
+            <a href="index">Back</a>
         </div>
         <h2>Sign Up</h2>
         <form class="login-form" action="process_signup.php" method="post">

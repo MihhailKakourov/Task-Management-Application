@@ -11,6 +11,7 @@ public class MenuController {
         model.addAttribute("header", "ToDoList");
         return "index";
     }
+
     @GetMapping("/contacts")
     public String contactPage(Model model) {
         model.addAttribute("header", "ToDoList");

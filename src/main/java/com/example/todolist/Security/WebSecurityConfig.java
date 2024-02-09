@@ -18,6 +18,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class WebSecurityConfig {
 
+
+
     @Bean
     public UserDetailsService userDetailsService() {
         return new CustomUserDetailsService();
@@ -44,11 +46,6 @@ public class WebSecurityConfig {
         http.authorizeHttpRequests(auth ->
                         auth.requestMatchers("/users").authenticated()
                                 .anyRequest().permitAll()
-                )
-                .formLogin(login ->
-                        login.usernameParameter("email")
-                                .defaultSuccessUrl("/")
-                                .permitAll()
                 )
                 .logout(logout -> logout.logoutSuccessUrl("/").permitAll()
                 );
