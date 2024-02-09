@@ -17,8 +17,6 @@ public interface UserRepository extends JpaRepository<User, Long>{
     List<User> findAll();
     User save(User user);
     Optional<User> findById(Long userId);
-    void deleteUserByName(String username);
-    @Query("SELECT u FROM User u WHERE u.username LIKE %:keyword%")
-    List<User> searchByKeyword(@Param("keyword") String keyword);
+    Optional<User> findByUsername(String username);
     void deleteById(Long userId);
 }

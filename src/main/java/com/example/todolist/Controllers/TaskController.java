@@ -57,13 +57,6 @@ public class TaskController {
         return "tasks";
     }
 
-    @PostMapping("/create")
-    public String createTask(@ModelAttribute Task task){
-        taskService.createTask(task);
-        return "redirect:/tasks";
-    }
-
-
     @GetMapping("/{id}/delete")
     public String deleteTaskById(@PathVariable Long task_id){
         taskService.deleteTaskById(task_id);

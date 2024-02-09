@@ -4,6 +4,7 @@ import com.example.todolist.Models.Task;
 import com.example.todolist.Models.User;
 import com.example.todolist.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,24 +17,14 @@ public class UserService {
     public List<User> getAllUsers(){
         return userRepository.findAll();
     }
-
-    public User getUserById(Long user_id){
-        return userRepository.findById(user_id).orElse(null);
+    public void saveUser(User user) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        userRepository.save(user);
     }
 
-    public User createUser(User user){
-        return userRepository.save(user);
-    }
-
-    public List<User> searchUserByKeyword(String keyword){
-        return userRepository.searchByKeyword(keyword);
-    }
-
-    public void deleteUserByName(String username){
-        userRepository.deleteUserByName(username);
-    }
-
-    public void deleteUserById(Long user_id){
-        userRepository.deleteById(user_id);
+    public User findUserById(Long id){
+        return userRepository.findById(id).orElseThrow();
     }
 }
