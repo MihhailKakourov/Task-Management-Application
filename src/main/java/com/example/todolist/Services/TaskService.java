@@ -25,21 +25,21 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    public List<Task> getTaskByUser(User user) {
-        return taskRepository.findByUser(user);
-    }
+//    public List<Task> getTaskByUser(User user) {
+//        return taskRepository.findByUser(user);
+//    }
 
-    public List<Task> getTaskByTaskCategory(String categoryName) {
-        return taskRepository.findByTaskCategory(categoryName);
-    }
+//    public List<Task> getTaskByTaskCategory(String categoryName) {
+//        return taskRepository.findByTaskCategory(categoryName);
+//    }
 
-    public List<Task> searchTaskByKeyword(String keyword){
-        return taskRepository.searchByKeyword(keyword);
-    }
+//    public List<Task> searchTaskByKeyword(String keyword){
+//        return taskRepository.searchByKeyword(keyword);
+//    }
 
-    public void deleteTaskByUser(User user){
-        taskRepository.deleteByUser(user);
-    }
+//    public void deleteTaskByUser(User user){
+//        taskRepository.deleteByUser(user);
+//    }
 
     public void deleteTaskById(Long task_id){
         taskRepository.deleteById(task_id);

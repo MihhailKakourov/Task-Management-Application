@@ -18,9 +18,9 @@ public interface TaskRepository extends JpaRepository<Task, Long>{
     Optional<Task> findById(Long taskId);
     Task save(Task task);
     void deleteById(Long taskId);
-    List<Task> findByUser(User user);
-    List<Task> findByTaskCategory(String category_name);
-    void deleteByUser(User user);
-    @Query("SELECT t FROM Task t WHERE t.task_title LIKE %:keyword%")
-    List<Task> searchByKeyword(@Param("keyword") String keyword);
+//    List<Task> findByUser(User user);
+//    List<Task> findByTaskCategory(String category_name);
+//    void deleteByUser(User user);
+//    @Query("SELECT t FROM Task t WHERE t.task_title LIKE %:keyword%")
+//    List<Task> searchByKeyword(@Param("keyword") String keyword);
 }
