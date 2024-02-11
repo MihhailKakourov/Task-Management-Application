@@ -12,6 +12,12 @@ public class MenuController {
         return "index";
     }
 
+    @GetMapping("/lists")
+    public String listPage(Model model) {
+        model.addAttribute("header", "ToDoList");
+        return "lists";
+    }
+
     @GetMapping("/contacts")
     public String contactPage(Model model) {
         model.addAttribute("header", "ToDoList");
