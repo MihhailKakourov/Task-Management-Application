@@ -35,4 +35,22 @@ public class MenuController {
         model.addAttribute("header", "ToDoList");
         return "signup";
     }
+
+    @GetMapping("/task_do")
+    public String taskDoPage(Model model) {
+        model.addAttribute("header", "ToDoList");
+        return "task_do";
+    }
+
+    @GetMapping("/task_add")
+    public String taskAddPage(Model model) {
+        model.addAttribute("header", "ToDoList");
+        return "task_add";
+    }
+
+    @GetMapping("/task_list")
+    public String taskListPage(Model model) {
+        model.addAttribute("header", "ToDoList");
+        return "task_list";
+    }
 }
