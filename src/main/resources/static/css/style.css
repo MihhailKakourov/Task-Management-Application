@@ -14,7 +14,7 @@ body {
 }
 
 body.login-page,
-body.signup-page {
+body.signup-page{
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -334,7 +334,7 @@ a:hover {
 
 .flex-wrapper {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -358,14 +358,19 @@ a:hover {
 }
 
 .task_do {
-  flex: 1;
-  margin: 0 10px;
+  margin: 150px 20px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
   background-color: #fff;
   color: black;
+  height: 200px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .task_do:hover {
@@ -378,21 +383,40 @@ a:hover {
 
 .task_container {
   display: inline-block;
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-right: 90px;
+  margin-left: 90px;
+  margin-top: 150px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
   background-color: #fff;
   color: black;
+  justify-content: center;
+  width: 300px;
 }
 
 .task_buttons{
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  background-color: #fff;
-  color: black;
+  background-color: rgb(103, 103, 202);
+  color: white;
+  border: none;
+}
+
+.input-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.task_text{
+  width: 30px;
+  height: 30px;
 }

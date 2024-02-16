@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" th:href="@{css/style.css}"  />
-  <link rel="stylesheet" href="../static/css/style.css"/>
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{css/style.css}"  />
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <title>Title</title>
 </head>
 <body>
 <div class="header">
-  <div class="logo">
-    <div class="logo_text">
-      <h1>To-Do List</h1>
+    <div class="logo">
+        <div class="logo_text">
+            <h1>To-Do List</h1>
+        </div>
     </div>
-  </div>
-  <div class="menubar">
-    <ul class="menu">
-      <li><a href="/">Main page</a></li>
-      <li><a href="task_do">Tasks</a></li>
-      <li><a href="contacts">Contacts</a></li>
-    </ul>
-  </div>
-  <div class="login">
-    <ul>
-      <li><a href="login">Login</a> | <a href="signup">Sign up</a></li>
-    </ul>
-  </div>
+    <div class="menubar">
+        <ul class="menu">
+            <li><a href="/">Main page</a></li>
+            <li><a href="task_do">Tasks</a></li>
+            <li><a href="contacts">Contacts</a></li>
+        </ul>
+    </div>
+    <div class="login">
+        <ul>
+            <li><a href="login">Login</a> | <a href="signup">Sign up</a></li>
+        </ul>
+    </div>
 </div>
 <div class="flex-wrapper">
-  <div class="main_container1">
-    <h1>Add new task</h1>
-    <br class="line">
-    <div class="task_container">
-      <input type="text" name="TASK NAME" placeholder="TASK NAME" required>
-      <br>
-      <input type="text" name="TASK DESCRIPTION" placeholder="TASK DESCRIPTION" required>
-      <br>
-      <input type="date" name="TASK DATE" placeholder="TASK DATE" required>
-      <br>
-      <input type="text" name="TASK STATUS" placeholder="TASK STATUS" required>
-      <br>
-      <button class="task_buttons">Submit ✔</button>
+    <div class="main_container1">
+        <h1>Add new task</h1>
+        <br class="line">
+        <div class="task_container">
+            <form action="/create" method="post" th:object="${task}" th:action="@{/task_add}">
+                <label>
+                    <input type="text" name="taskTitle" placeholder="TASK NAME" required>
+                </label>
+                <br>
+                <label>
+                    <input type="text" name="taskDescription" placeholder="TASK DESCRIPTION" required>
+                </label>
+                <br>
+                <br>
+                <br>
+                <button class="task_buttons">Submit ✔</button>
+            </form>
+        </div>
     </div>
-  </div>
 </div>
 </div>
 </body>

@@ -15,28 +15,28 @@
     </div>
     <div class="menubar">
         <ul class="menu">
-            <li><a href="/">Main page</a></li>
+            <li><a href="home">Main page</a></li>
             <li><a href="task_do">Tasks</a></li>
             <li><a href="contacts">Contacts</a></li>
         </ul>
     </div>
     <div class="login">
         <ul>
-            <li><a href="login">Login</a> | <a href="signup">Sign up</a></li>
+            <li><a href="login">Login</a> | <a href="register">Sign up</a></li>
         </ul>
     </div>
 </div>
 <div class="flex-wrapper">
     <div class="main_container">
         <div class="welcome_container">
-            <h1>Welcome [USERNAME]!</h1>
+            <h1 th:text="'Welcome ' + ${username} + '!'">Welcome [USERNAME]!</h1>
         </div>
         <div class="tasks_do_container">
             <a href="task_add" class="task_do">
                 <h1>Add task</h1>
                 <p>Here you can add new task</p>
             </a>
-            <a href="task_list" class="task_do">
+            <a href="tasks" class="task_do">
                 <h1>Task list</h1>
                 <p>Here you can see all your tasks as well as completed or uncompleted</p>
             </a>
