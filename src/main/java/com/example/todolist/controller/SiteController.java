@@ -35,4 +35,10 @@ public class SiteController {
         model.addAttribute("header", "ToDoList");
         return "task_add";
     }
+
+    @GetMapping("/update_task")
+    public String updateTaskPage(Model model) {
+        model.addAttribute("header", "ToDoList");
+        return "update_task";
+    }
 }

@@ -401,7 +401,7 @@ a:hover {
   width: 300px;
 }
 
-.task_buttons{
+.task_buttons .update{
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -426,16 +426,30 @@ span{
 
 .individual-task {
     display: inline-block;
-      text-align: center;
-      margin: 0 auto;
-      margin-right: 90px;
-      margin-left: 90px;
-      margin-top: 150px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      padding: 10px;
-      background-color: #fff;
-      color: black;
-      justify-content: center;
-      width: 300px;
+     text-align: center;
+     margin: 0 auto;
+     margin-right: 90px;
+     margin-left: 90px;
+     margin-top: 150px;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+     padding: 10px;
+     background-color: #fff;
+     color: black;
+     justify-content: center;
+     width: 300px;
+}
+
+.individual-task a, button{
+  color: rgb(103, 103, 202);
+  text-decoration: none;
+  border: 2px solid rgb(103, 103, 202);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.individual-task a:hover, button:hover{
+  background-color: rgb(103, 103, 202);
+  color: #fff;
 }
