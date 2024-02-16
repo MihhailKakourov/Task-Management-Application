@@ -27,5 +27,4 @@ public class Task {
 //               inverseJoinColumns = @JoinColumn(name = "categoryId"))
 //    List<TaskCategory> categories;
 
-
 }

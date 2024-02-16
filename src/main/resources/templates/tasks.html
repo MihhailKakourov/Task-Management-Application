@@ -22,7 +22,7 @@
         </div>
         <div class="login">
             <ul>
-                <li><a href="login">Login</a> | <a href="login">Sign up</a></li>
+                <li><a href="login">Login</a> | <a href="register">Sign up</a></li>
             </ul>
         </div>
     </div>
@@ -31,35 +31,22 @@
         <h1>All tasks</h1>
         <br class="line">
         <div id="tasksContainer">
-        </div>
-    </div>
-    <div class="footer">
-        <p>To-Do List</p>
-    </div>
-</div>
-
-<script th:inline="javascript">
-    document.addEventListener("DOMContentLoaded", function() {
-        var tasksContainer = document.getElementById("tasksContainer");
-
-        [[${tasks}]].forEach(function(task) {
-            var taskDiv = document.createElement("div");
-            taskDiv.className = "task_container";
-            taskDiv.innerHTML = `
-                <span class="task_text" th:text="${task.taskTitle}">45</span>
+                <div class="individual-task" th:each="task: ${tasks}">
+                <h1 class="task_text" th:text="${task.taskTitle}"></h1>
                 <br>
-                <span class="task_text" th:text="${task.taskDescription}"></span>
+                <p class="task_text" th:text="${task.taskDescription}"></p>
                 <br>
                 <br>
                 <button class="task_buttons">Done ✔</button>
                 <br>
                 <br>
                 <button class="task_buttons">Update 📝</button>
-            `;
-            tasksContainer.appendChild(taskDiv);
-        });
-    });
-</script>
-
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>To-Do List</p>
+    </div>
+</div>
 </body>
 </html>

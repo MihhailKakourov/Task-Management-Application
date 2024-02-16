@@ -420,11 +420,22 @@ a:hover {
   font-size: 16px;
 }
 
-.task_text{
-  width: 30px;
-  height: 30px;
-}
-
 span{
   color: black
+}
+
+.individual-task {
+    display: inline-block;
+      text-align: center;
+      margin: 0 auto;
+      margin-right: 90px;
+      margin-left: 90px;
+      margin-top: 150px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      background-color: #fff;
+      color: black;
+      justify-content: center;
+      width: 300px;
 }
