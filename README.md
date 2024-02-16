@@ -56,7 +56,7 @@ Make sure you have the following installed:
    ```
    2. Open your browser and go to:
    ```
-   http://localhost:8080
+   http://localhost:3000
    ```
 ## Technologies Used
    - Java
