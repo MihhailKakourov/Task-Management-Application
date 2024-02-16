@@ -31,7 +31,6 @@
         <h1>All tasks</h1>
         <br class="line">
         <div id="tasksContainer">
-            <!-- Здесь будут динамически добавлены задачи -->
         </div>
     </div>
     <div class="footer">
@@ -39,7 +38,6 @@
     </div>
 </div>
 
-<!-- JavaScript для загрузки задач -->
 <script th:inline="javascript">
     document.addEventListener("DOMContentLoaded", function() {
         var tasksContainer = document.getElementById("tasksContainer");
@@ -48,7 +46,7 @@
             var taskDiv = document.createElement("div");
             taskDiv.className = "task_container";
             taskDiv.innerHTML = `
-                <span class="task_text" th:text="${task.taskTitle}"></span>
+                <span class="task_text" th:text="${task.taskTitle}">45</span>
                 <br>
                 <span class="task_text" th:text="${task.taskDescription}"></span>
                 <br>

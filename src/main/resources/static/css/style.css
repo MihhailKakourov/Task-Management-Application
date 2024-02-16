@@ -176,7 +176,11 @@ a:hover {
   margin-top: 10px;
 }
 
-.signup-link a {
+.login-container button{
+  text-align: right;
+}
+
+.signup-link a, button{
   color: rgb(103, 103, 202);
   text-decoration: none;
   border: 2px solid rgb(103, 103, 202);
@@ -185,7 +189,7 @@ a:hover {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.signup-link a:hover {
+.signup-link a:hover, button:hover{
   background-color: rgb(103, 103, 202);
   color: #fff;
 }
@@ -419,4 +423,8 @@ a:hover {
 .task_text{
   width: 30px;
   height: 30px;
+}
+
+span{
+  color: black
 }

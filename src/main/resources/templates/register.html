@@ -16,11 +16,13 @@
         <a href="home">Back</a>
     </div>
     <h2>Sign Up</h2>
+    <br>
     <form th:action="@{/register}" th:object="${user}" enctype="multipart/form-data" method="post">
-        <input type="text" name="username" placeholder="Username">
+        <input class="input-box" type="text" name="username" placeholder="Username">
         <br>
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Sign Up</button>
+        <input class="input-box" type="password" name="password" placeholder="Password">
+        <br>
+        <button class="register-btn" type="submit">Sign Up</button>
     </form>
     <div class="signup-link">
         <span>Have an account? </span>

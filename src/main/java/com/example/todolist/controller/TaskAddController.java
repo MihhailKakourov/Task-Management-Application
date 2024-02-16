@@ -37,26 +37,19 @@ public class TaskAddController {
 
     @PostMapping("/task_add")
     public String addTask(Task task) {
-        // Получаем текущего пользователя из контекста безопасности
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        // Проверяем, что principal является UserDetails
         if (principal instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) principal;
             String username = userDetails.getUsername();
 
-            // Получаем пользователя по его имени пользователя
             User user = userRepository.findByUsername(username);
 
-            // Устанавливаем пользователя для задачи
             task.setUsers(user);
 
-            // Сохраняем задачу
             taskAddService.addTask(task);
             return "redirect:/tasks";
         } else {
-            // Обработка случая, когда текущий пользователь не найден
-            // Возвращаем какую-то ошибку или перенаправляем на страницу аутентификации
             return "redirect:/login";
         }
     }

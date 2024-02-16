@@ -21,6 +21,4 @@ public class TaskController {
     public List<Task> getTasks() {
         return taskAddService.getAllTasks();
     }
-
-    // Другие методы контроллера
 }

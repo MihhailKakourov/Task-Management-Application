@@ -22,17 +22,13 @@ public class TaskViewController {
 
     @GetMapping("/tasks")
     public String viewTasks(Model model) {
-        // Получаем текущего пользователя
         User currentUser = userService.getCurrentUser();
         Integer userId = currentUser.getId();
 
-        // Получаем список задач для текущего пользователя
         List<Task> tasks = taskAddService.getTasksByUserId(userId);
 
-        // Передаем список задач в модель для отображения на странице
         model.addAttribute("tasks", tasks);
 
-        // Возвращаем имя представления (шаблона), где будут отображены задачи
         return "tasks";
     }
 }

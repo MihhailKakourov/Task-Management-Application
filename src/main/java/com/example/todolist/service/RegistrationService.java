@@ -18,7 +18,7 @@ public class RegistrationService {
     public void registerNewUser(String username, String password) {
         User user = new User();
         user.setUsername(username);
-        user.setPassword(passwordEncoder.encode(password)); // Хеширование пароля
+        user.setPassword(passwordEncoder.encode(password));
         try {
             userRepository.save(user);
             System.out.println("User registered successfully: " + username);

@@ -15,11 +15,17 @@ public class SiteController {
         return "index";
     }
 
+    @GetMapping("/contacts")
+    public String contactsPage(Model model) {
+        model.addAttribute("header", "ToDoList");
+        return "contacts";
+    }
+
     @GetMapping("/task_do")
     public String taskDoPage(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName(); // Получаем имя текущего пользователя
-        model.addAttribute("username", username); // Добавляем имя пользователя в модель
+        model.addAttribute("username", username);
         model.addAttribute("header", "ToDoList");
         return "task_do";
     }

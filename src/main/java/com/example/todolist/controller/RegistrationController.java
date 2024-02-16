@@ -17,11 +17,11 @@ public class RegistrationController {
     public String registerUser(@RequestParam String username, @RequestParam String password) {
         System.out.println("Received registration request for username: " + username);
         registrationService.registerNewUser(username, password);
-        return "redirect:/login"; // Перенаправление пользователя на страницу входа после регистрации
+        return "redirect:/login";
     }
 
     @GetMapping("/register")
     public String showRegistrationForm() {
-        return "register"; // Имя вашего шаблона для страницы регистрации
+        return "register";
     }
 }

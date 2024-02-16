@@ -37,7 +37,6 @@ public class UserService implements UserDetailsService {
         return repository.findByUsername(username);
     }
 
-    // Метод для получения текущего пользователя
     public User getCurrentUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
