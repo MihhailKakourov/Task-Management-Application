@@ -6,7 +6,6 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TaskAddService {
@@ -25,17 +24,6 @@ public class TaskAddService {
             e.printStackTrace();
         }
     }
-
-//    public void deleteTask(Long taskId) {
-//        Optional<Task> taskOptional = taskRepository.findById(taskId);
-//
-//        if (taskOptional.isPresent()) {
-//            Task task = taskOptional.get();
-//            taskRepository.delete(task);
-//        } else {
-//            throw new EntityNotFoundException("Task not found with id: " + taskId);
-//        }
-//    }
 
     public List<Task> getTasksByUserId(Integer userId) {
         return taskRepository.findByUsersId(userId);

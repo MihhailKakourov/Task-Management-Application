@@ -20,11 +20,4 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "userId")
     User users;
-
-//    @ManyToMany
-//    @JoinTable(name = "taskAndCategory",
-//               joinColumns = @JoinColumn(name = "taskId"),
-//               inverseJoinColumns = @JoinColumn(name = "categoryId"))
-//    List<TaskCategory> categories;
-
 }

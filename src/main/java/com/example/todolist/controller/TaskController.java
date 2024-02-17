@@ -2,10 +2,8 @@ package com.example.todolist.controller;
 
 import com.example.todolist.model.Task;
 import com.example.todolist.service.TaskAddService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.todolist.service.TaskChangeService;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,20 +11,16 @@ import java.util.List;
 @RequestMapping("/api")
 public class TaskController {
     private final TaskAddService taskAddService;
+    private final TaskChangeService taskChangeService;
 
-    public TaskController(TaskAddService taskAddService) {
+    public TaskController(TaskAddService taskAddService, TaskChangeService taskChangeService) {
         this.taskAddService = taskAddService;
+        this.taskChangeService = taskChangeService;
     }
 
-    @GetMapping("/tasks") // Изменяем маппинг
+    @GetMapping("/tasks")
     public List<Task> getTasks() {
         return taskAddService.getAllTasks();
     }
-
-//    @GetMapping("/delete-task/{taskId}")
-//    public String deleteTask(@PathVariable Long taskId) {
-//        taskAddService.deleteTask(taskId);
-//        return "redirect:/task_do";
-//    }
 }
 

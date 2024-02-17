@@ -2,73 +2,68 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" th:href="@{css/style.css}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main Page</title>
+  <link rel="stylesheet" th:href="@{css/style.css}" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="header">
-  <div class="logo">
-    <div class="logo_text">
-      <h1>To-Do List</h1>
+<div class="flex-wrapper">
+  <div class="header">
+    <div class="logo">
+      <div class="logo_text">
+        <h1>To-Do List</h1>
+      </div>
+    </div>
+    <div class="menubar">
+      <ul class="menu">
+        <li><a href="#">Main page</a></li>
+        <li><a href="task_do">Tasks</a></li>
+        <li><a href="contacts">Contacts</a></li>
+      </ul>
+    </div>
+    <div class="login">
+      <ul>
+        <li><a href="login">Login</a> | <a href="register">Sign up</a></li>
+      </ul>
     </div>
   </div>
-  <div class="menubar">
-    <ul class="menu">
-      <li>
-        <a href="#">Main page</a>
-      </li>
-      <li>
-        <a href="task_do">Tasks</a>
-      </li>
-      <li>
-        <a href="contacts">Contacts</a>
-      </li>
-    </ul>
-  </div>
-  <div class="login">
-    <ul>
-      <li>
-        <a href="login">Login</a> | <a href="register">Sign up</a>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="main">
-  <div class="container_first">
-    <img src="images/training.png">
-    <div class="container-text">
-      <h1>Managing your schedule</h1>
-      <p>Maximum productivity in your hands! Our task management tool enables efficient planning, <br>tracking and execution of tasks. Easily organize your work life, improve processes and achieve your goals. <br>Your key to success starts here and now with our unique solution. </p>
+  <div class="main">
+    <div class="container_first">
+      <img src="images/training.png">
+      <div class="container-text">
+        <h1>Managing your schedule</h1>
+        <p>Maximum productivity in your hands! Our task management tool enables efficient planning, <br>tracking and execution of tasks. Easily organize your work life, improve processes and achieve your goals. <br>Your key to success starts here and now with our unique solution. </p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container_second">
+      <div class="text_image">
+        <img src="images/imagefirst.png" alt="" width="300px" height="auto">
+        <h1>Intuitive Use</h1>
+        <p>With To-Do list, even beginners can get up to speed in no time. <br>The simple and intuitive interface makes it easy to create, <br>edit and track tasks, freeing you from having to learn complex instructions. </p>
+      </div>
+      <div class="text_image">
+        <img src="images/imagesecond.png" alt="" width="300px" height="auto">
+        <h1>Full Transparency</h1>
+        <p>Thanks to the reporting system and instant updates, you will always <br>have a clear picture of the current status of your tasks. <br>We provide complete transparency so you can focus on what's <br> important without wasting time on additional checks. </p>
+      </div>
+      <div class="text_image">
+        <img src="images/imagethird.png" alt="" width="300px" height="auto">
+        <h1>Maximizing Efficiency</h1>
+        <p>To-Do List doesn't just manage tasks, it maximizes your efficiency. <br>With smart scheduling features, reminders and analytics, <br>our tool helps you optimize your time use so <br>you can focus on the key aspects of your activities. </p>
+      </div>
     </div>
   </div>
   <br>
   <br>
-  <div class="container_second">
-    <div class="text_image">
-      <img src="images/imagefirst.png" alt="" width="300px" height="auto">
-      <h1>Intuitive Use</h1>
-      <p>With To-Do list, even beginners can get up to speed in no time. <br>The simple and intuitive interface makes it easy to create, <br>edit and track tasks, freeing you from having to learn complex instructions. </p>
-    </div>
-    <div class="text_image">
-      <img src="images/imagesecond.png" alt="" width="300px" height="auto">
-      <h1>Full Transparency</h1>
-      <p>Thanks to the reporting system and instant updates, you will always <br>have a clear picture of the current status of your tasks. <br>We provide complete transparency so you can focus on what's <br> important without wasting time on additional checks. </p>
-    </div>
-    <div class="text_image">
-      <img src="images/imagethird.png" alt="" width="300px" height="auto">
-      <h1>Maximizing Efficiency</h1>
-      <p>To-Do List doesn't just manage tasks, it maximizes your efficiency. <br>With smart scheduling features, reminders and analytics, <br>our tool helps you optimize your time use so <br>you can focus on the key aspects of your activities. </p>
-    </div>
+  <br>
+  <div class="footer">
+    <p>To-Do List</p>
   </div>
-</div>
-<br>
-<br>
-<br>
-<div class="footer">
-  <p>To-Do List</p>
 </div>
 </body>
 </html>

@@ -31,16 +31,19 @@
         <h1>All tasks</h1>
         <br class="line">
         <div id="tasksContainer">
-                <div class="individual-task" th:each="task: ${tasks}">
+            <div class="individual-task" th:each="task : ${tasks}">
                 <h1 class="task_text" th:text="${task.taskTitle}"></h1>
                 <br>
                 <p class="task_text" th:text="${task.taskDescription}"></p>
                 <br>
+                <form th:action="@{/deleteTask}" method="post">
+                    <input type="hidden" name="taskId" th:value="${task.taskId}" />
+                    <button class="task_buttons" type="submit">Done ✔</button>
+                </form>
                 <br>
-                <button class="task_buttons">Done ✔</button>
-                <br>
-                <br>
-                <button class="task_buttons">Update 📝</button>
+                <div class="task_buttons">
+                    <a th:href="@{'/edit_task?id=' + ${task.taskId}}">Edit</a>
+                </div>
             </div>
         </div>
     </div>
