@@ -21,12 +21,13 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .formLogin(form -> form
+                        .loginPage("/login")
                         .defaultSuccessUrl("/home", true)
                         .permitAll())
                 .authorizeHttpRequests(req -> req
-                        .requestMatchers("/home").permitAll() // Разрешаем доступ к главной странице
-                        .requestMatchers("/register/**").permitAll() // Разрешаем доступ к странице регистрации
-                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll() // Разрешаем доступ к статическим ресурсам
+                        .requestMatchers("/home").permitAll()
+                        .requestMatchers("/register/**").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
                         .anyRequest().authenticated())
                 .userDetailsService(userService)
                 .build();
