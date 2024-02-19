@@ -402,12 +402,15 @@ a:hover {
 }
 
 .task_buttons{
+  text-align: center;
+  width: 30%;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
   background-color: rgb(103, 103, 202);
   color: white;
   border: none;
+  margin: 0 auto;
 }
 
 .task_buttons:hover{
@@ -451,8 +454,13 @@ span{
   width: 65px;
 }
 
-.button-container{
+.button-container-register{
   padding-left: 152px;
+  padding-bottom: 10px;
+}
+
+.button-container-login{
+  padding-left: 170px;
   padding-bottom: 10px;
 }
 
@@ -466,6 +474,10 @@ span{
   box-sizing: border-box;
   line-height: normal;
   display: block;
+}
+
+.login-btn{
+  background-color: white;
 }
 
 .user_list{
