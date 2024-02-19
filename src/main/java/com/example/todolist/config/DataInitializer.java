@@ -19,7 +19,7 @@ public class DataInitializer implements ApplicationListener<ContextRefreshedEven
     private UserRepository userRepository;
 
     @Autowired
-    private RoleRepository roleRepository; // Предполагаем, что у вас есть такой репозиторий
+    private RoleRepository roleRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;

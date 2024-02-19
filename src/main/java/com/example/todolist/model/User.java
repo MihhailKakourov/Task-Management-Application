@@ -33,7 +33,6 @@ public class User implements UserDetails {
     )
     private List<Role> roleList;
 
-    // UserDetails interface methods
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorityList = new ArrayList<>();
@@ -64,7 +63,6 @@ public class User implements UserDetails {
         return true;
     }
 
-    // Геттеры и сеттеры
     public Integer getId() {
         return id;
     }

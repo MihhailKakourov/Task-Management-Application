@@ -24,7 +24,7 @@ public class SiteController {
     @GetMapping("/task_do")
     public String taskDoPage(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName(); // Получаем имя текущего пользователя
+        String username = auth.getName();
         model.addAttribute("username", username);
         model.addAttribute("header", "ToDoList");
         return "task_do";
