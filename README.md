@@ -20,10 +20,11 @@ This project is a basic task management application that allows users to create,
 
 ## Features
 
-- Create, update, and delete tasks.
+- Create and update tasks.
 - View a list of tasks.
-- Task status tracking (completed or pending).
+- Task status tracking.
 - Simple and intuitive user interface.
+- Admin panel template, where you can see list of users (WIP)
 
 ## Getting Started
 
@@ -41,22 +42,13 @@ Make sure you have the following installed:
    ```
    git clone https://github.com/MihhailKakourov/Task-Management-Application.git
    ```
-   2. Navigate to the project directory:
-   ```
-   cd task-management-system
-   ```
-   3. Build the project:
-   ```
-    mvn clean install
-   ```
+   2. Chose the project directory in your IDE.
+   3. Run the project.
 ### Usage
    1. Run the application:
-   ```
-   mvn spring-boot:run
-   ```
    2. Open your browser and go to:
    ```
-   http://localhost:3000/home
+   http://localhost:3000/
    ```
 ## Technologies Used
    - Java
@@ -66,26 +58,27 @@ Make sure you have the following installed:
    - Hibernate
 
    - Thymeleaf
+     
+   - Spring Security 
 
 ## Functional requirements
 - Guest
     ```
-    View tasks
-    Filtering tasks
+    Login
+    Signup
+    Navigate through pages
     ```
 - User
     ```
     Creating tasks
     View the list of tasks
     Editing a task
-    Deleting a task
     Mark a task as completed
-    Filtering tasks
     ```
 - Administrator
     ```
     All user capabilities
-    Task management (edit and delete tasks created by any user. Ability to view a list of  all tasks)
+    User management (see list of users, delete user, add new user)
     ```
 
 ## Participants
