@@ -46,4 +46,5 @@ public class UserService implements UserDetailsService {
             throw new IllegalStateException("Unable to get current user details");
         }
     }
+
 }

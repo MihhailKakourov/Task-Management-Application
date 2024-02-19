@@ -16,26 +16,32 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
 
     @Column(name = "username")
-    String username;
+    private String username;
 
     @Column(name = "password")
-    String password;
+    private String password;
 
-    public Integer getId() {
-        return id;
-    }
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Role> roleList;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
+    // UserDetails interface methods
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> authorityList = new ArrayList<>();
+        for (Role role : roleList) {
+            SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.getName());
+            authorityList.add(authority);
+        }
+        return authorityList;
     }
 
     @Override
@@ -58,18 +64,21 @@ public class User implements UserDetails {
         return true;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    // Геттеры и сеттеры
+    public Integer getId() {
+        return id;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorityList = new ArrayList<>();
-        for (Role role : roleList) {
-            SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.getName());
-            authorityList.add(authority);
-        }
-        return authorityList;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -87,9 +96,4 @@ public class User implements UserDetails {
     public void setRoleList(List<Role> roleList) {
         this.roleList = roleList;
     }
-
-    @OneToMany(fetch = FetchType.EAGER)
-    List<Role> roleList;
-
-
 }

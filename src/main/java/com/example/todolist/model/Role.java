@@ -7,13 +7,15 @@ import jakarta.persistence.*;
 public class Role {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
+    // Конструкторы, геттеры и сеттеры
+
+    public Role() {}
 
     public Integer getId() {
         return id;
