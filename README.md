@@ -51,7 +51,7 @@ Make sure you have the following installed:
    ```
    http://localhost:3000/
    ```
-    2.1 You can use preinitialized users (username: admin, password: admin for admin rights | username: user, password: user for user rights)
+   2.1. You can use preinitialized users (username: admin, password: admin for admin rights | username: user, password: user for user rights)
 ## Technologies Used
    - Java
 
