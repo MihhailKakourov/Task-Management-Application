@@ -33,8 +33,8 @@ This project is a basic task management application that allows users to create,
 Make sure you have the following installed:
 
 - [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
-- [Maven](https://maven.apache.org/download.cgi)
-- Your preferred IDE
+- [XAMPP](https://www.apachefriends.org/ru/index.html)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
 ### Installation
 
@@ -43,9 +43,10 @@ Make sure you have the following installed:
    git clone https://github.com/MihhailKakourov/Task-Management-Application.git
    ```
    2. Chose the project directory in your IDE.
-   3. Run the project.
+   3. Run Apache and MySQL servers in XAMPP.
+   4. Run the project through main class (src/main/java/TodolistApplication.java).
 ### Usage
-   1. Run the application:
+   1. Run the application.
    2. Open your browser and go to:
    ```
    http://localhost:3000/
